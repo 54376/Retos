@@ -1,4 +1,4 @@
-package com.usa.ciclo3.reto3.description;
+package com.usa.ciclo3.reto3.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
