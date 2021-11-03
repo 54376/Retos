@@ -1,4 +1,4 @@
-package com.usa.ciclo3.reto3.model;
+package com.usa.ciclo3.reto3.description;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
@@ -13,10 +13,9 @@ public class Quadbike implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    private String  brand;
-    private String  model;
-    private Integer category_id;
     private String  name;
+    private String  brand;
+    private String  description;
 
     @ManyToOne
     @JoinColumn(name="idCategory")
@@ -47,20 +46,12 @@ public class Quadbike implements Serializable {
         this.brand = brand;
     }
 
-    public String getModel() {
-        return model;
+    public String getDescription() {
+        return description;
     }
 
-    public void setModel(String model) {
-        this.model = model;
-    }
-
-    public Integer getCategory_id() {
-        return category_id;
-    }
-
-    public void setCategory_id(Integer category_id) {
-        this.category_id = category_id;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public String getName() {
