@@ -14,6 +14,7 @@ public class Quadbike implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String  name;
+    private Integer year;
     private String  brand;
     private String  description;
 
@@ -60,6 +61,14 @@ public class Quadbike implements Serializable {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Integer getYear() {
+        return year;
+    }
+
+    public void setYear(Integer year) {
+        this.year = year;
     }
 
     public Category getCategory() {
