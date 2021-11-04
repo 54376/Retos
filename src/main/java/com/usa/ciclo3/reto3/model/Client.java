@@ -14,7 +14,7 @@ public class Client implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idClient;
     private String  email;
-    private Integer password;
+    private String password;
     private String  name;
     private Integer age;
 
@@ -40,7 +40,9 @@ public class Client implements Serializable {
 
     public void setEmail(String email) {
         this.email = email;
-    }public String getName() {
+    }
+
+    public String getName() {
         return name;
     }
 
@@ -48,11 +50,11 @@ public class Client implements Serializable {
         this.name = name;
     }
 
-    public Integer getPassword() {
+    public String getPassword() {
         return password;
     }
 
-    public void setPassword(Integer password) {
+    public void setPassword(String password) {
         this.password = password;
     }
 
