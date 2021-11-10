@@ -73,7 +73,7 @@ public class ReservationService {
         }
     }
 
-    public List<ReportsClient> reporteClientsService(){
+    public List<ReportsClient> reportClientsService(){
         return reservationRepository.getClientsRepository();
     }
 }

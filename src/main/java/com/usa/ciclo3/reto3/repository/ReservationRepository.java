@@ -30,12 +30,12 @@ public class ReservationRepository {
         reservationCrudRepository.delete(reservation);
     }
 
-    public List<Reservaciones>ReservationStatus(String status){
+    public List<Reservation>ReservationStatus(String status){
         return reservationCrudRepository.findAllByStatus(status);
     }
 
-    public List<Reservaciones> ReservationTiempoRepositorio(Date a, Date b){
-        return reservationCrudRepository.findAllByStartDateAfterAndStartDateBefore(a, b);
+    public List<Reservation> ReservationTiempoRepositorio(Date a, Date b){
+        return reservationCrudRepository.findAllByStartDateAfterAndDevolutionDateBefore(a, b);
     }
 
     public List<CounterClients> getClientsRepository(){
