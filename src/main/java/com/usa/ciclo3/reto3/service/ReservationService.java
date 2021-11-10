@@ -50,5 +50,30 @@ public class ReservationService {
             return true;
         }).orElse(false);
         return Boolean;
+
+    public ReportsStatus reporteStatusServicio (){
+        List<Reservation>completed= reservationRepository.ReservationStatusRepository("completed");
+        List<Reservation>cancelled= reservationRepository.ReservationStatusRepository("cancelled");
+        return new ReportsStatus(completed.size(), cancelled.size() );
+    }
+
+    public List<Reservation> reporteTiempoServicio (String datoA, String datoB){
+        SimpleDateFormat parser = new SimpleDateFormat ("yyyy-MM-dd");
+        Date datoUno = new Date();
+        Date datoDos = new Date();
+        try{
+            datoUno = parser.parse(datoA);
+            datoDos = parser.parse(datoB);
+        }catch(ParseException evt){
+            evt.printStackTrace();
+        }if(datoUno.before(datoDos)){
+            return reservationRepository.ReservacionTiempoRepositorio(datoUno, datoDos);
+        }else{
+            return new ArrayList<>();
+        }
+    }
+
+    public List<ReportsClient> reporteClientsService(){
+        return reservationRepository.getClientsRepository();
     }
 }
